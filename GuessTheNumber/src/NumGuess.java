@@ -27,7 +27,6 @@ public class NumGuess{
 			instruction.setBounds(70, 20, 200, 67);
 			frame.add(instruction);
 			instruction.setBackground(Color.black );
-			
 					
 			JTextField text = new JTextField();
 			frame.getContentPane().add(text);
