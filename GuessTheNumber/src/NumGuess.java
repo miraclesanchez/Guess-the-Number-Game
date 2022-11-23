@@ -84,6 +84,7 @@ public class NumGuess{
 			});
 			frame.setVisible(true);
 	}
+
 		
 }
 //create separate class for the game frame and one for the code
@@ -93,4 +94,5 @@ public class NumGuess{
 //win streak
 //lowest guess count
 //guess count--DONE
+//ask for language preference
 //
