@@ -8,25 +8,32 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 public class NumGuess{
-	
 	private final static Random rd=new Random();
+	static JFrame frame;
+	static JLabel instruction;
+	static JLabel answer;
+	static JLabel winStreak;
+	static JLabel highScore;
+	static JLabel guessCount;
+	static JLabel highestGuess;
+	static JLabel lowestGuess;
+	static JTextField text;
+	static JButton next;
+	static JButton enter;
+	static JButton reset;
 	static int random;
 	static int guess = 0;
 	static int guess_count=5;
 	static int win_streak=0;
-	static JButton next;
-	static JButton enter;
-	static JButton reset;
 	static int highest_guess=0;
 	static int lowest_guess=0;
 	static int high_score=0;
 	
-
 	public static void main(String[] args) {
 			random=rd.nextInt(100);
 			System.out.println(random);
 			
-			JFrame frame = new JFrame(" ? Number Game ?");
+			frame = new JFrame(" ? Number Game ?");
 			//JPanel panel=new JPanel();
 			frame.getContentPane().setLayout(null);
 			frame.setBounds(0,0,350,300);
@@ -34,41 +41,41 @@ public class NumGuess{
 			frame.setLocation(600,350);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
-			JLabel instruction=new JLabel("Enter a number from 1 to 100");
+			instruction=new JLabel("Enter a number from 1 to 100");
 			instruction.setBounds(70, 70, 200, 67);
 			frame.add(instruction);
 			instruction.setBackground(Color.black );
 					
-			JTextField text = new JTextField();
+			text = new JTextField();
 			frame.getContentPane().add(text);
 			text.setBounds(10, 120, 150, 25);
 			
-			JLabel answer=new JLabel("Good Luck!");
+			answer=new JLabel("Good Luck!");
 			answer.setBounds(120,160,150,25);
 			frame.add(answer);
 			answer.setBackground(Color.black);
 			
-			JLabel winStreak=new JLabel("Win Streak: "+win_streak);
+			winStreak=new JLabel("Win Streak: "+win_streak);
 			winStreak.setBounds(10,30,250,67);
 			frame.add(winStreak);
 			winStreak.setBackground(Color.black);
 			
-			JLabel highScore=new JLabel("High Score: "+high_score);
+			highScore=new JLabel("High Score: "+high_score);
 			highScore.setBounds(10,-10,250,67);
 			frame.add(highScore);
 			highScore.setBackground(Color.black);
 			
-			JLabel guessCount=new JLabel("Guesses Left: "+guess_count);
+			guessCount=new JLabel("Guesses Left: "+guess_count);
 			guessCount.setBounds(230, 30, 200, 67);
 			frame.add(guessCount);
 			guessCount.setBackground(Color.black );
 			
-			JLabel highestGuess=new JLabel("Highest Guess: "+highest_guess);
+			highestGuess=new JLabel("Highest Guess: "+highest_guess);
 			highestGuess.setBounds(230, -25, 250, 67);
 			frame.add(highestGuess);
 			highestGuess.setBackground(Color.black );
 			
-			JLabel lowestGuess=new JLabel("Lowest Guess: "+lowest_guess);
+			lowestGuess=new JLabel("Lowest Guess: "+lowest_guess);
 			lowestGuess.setBounds(230, -10, 250, 67);
 			frame.add(lowestGuess);
 			lowestGuess.setBackground(Color.black );
