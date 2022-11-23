@@ -19,14 +19,14 @@ public class NumGuess{
 			//JPanel panel=new JPanel();
 			frame.getContentPane().setLayout(null);
 			frame.setBounds(0,0,350,300);
-			frame.getContentPane().setBackground(Color.cyan);
+			frame.getContentPane().setBackground(Color.yellow);
 			frame.setLocation(600,350);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 			JLabel instruction=new JLabel("Enter a number from 1 to 100");
 			instruction.setBounds(70, 20, 200, 67);
 			frame.add(instruction);
-			instruction.setBackground(Color.black );
+			instruction.setBackground(Color.black);
 					
 			JTextField text = new JTextField();
 			frame.getContentPane().add(text);
