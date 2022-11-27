@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class NumGuess{
+public class SpanishNumGuess{
 	private final static Random rd=new Random();
 	JFrame frame;
 	JLabel instruction, answer, hints, winStreak, highScore, guessCount, highestGuess, lowestGuess, language;
@@ -21,7 +21,7 @@ public class NumGuess{
 	int guess, win_streak, highest_guess, lowest_guess, high_score=0;
 	int guess_count=5;
 
-	public NumGuess() {
+	public SpanishNumGuess() {
 			random=rd.nextInt(20);
 			System.out.println(random);
 			
@@ -39,8 +39,8 @@ public class NumGuess{
 			reminders.setBounds(205,5,120,50);
 			reminders.setBackground(Color.red);
 			
-			instruction=new JLabel("Enter a number from 0 to 20");
-			instruction.setBounds(70, 70, 200, 67);
+			instruction=new JLabel("Introduce un número del 0 al 20");
+			instruction.setBounds(70, 70, 260, 67);
 			frame.add(instruction);
 			instruction.setBackground(Color.black );
 					
@@ -48,17 +48,17 @@ public class NumGuess{
 			frame.getContentPane().add(text);
 			text.setBounds(10, 120, 150, 25);
 			
-			hints=new JLabel("Good Luck!");
+			hints=new JLabel("Buena Suerte!");
 			hints.setBounds(120,160,150,25);
 			frame.add(hints);
 			hints.setBackground(Color.black);
 			
-			winStreak=new JLabel("Win Streak: "+win_streak);
+			winStreak=new JLabel("Buena Racha: "+win_streak);
 			winStreak.setBounds(10,15,250,67);
 			frame.add(winStreak);
 			winStreak.setBackground(Color.black);
 			
-			highScore=new JLabel("High Score: "+high_score);
+			highScore=new JLabel("Puntuación más alta: "+high_score);
 			highScore.setBounds(10,-10,250,67);
 			frame.add(highScore);
 			highScore.setBackground(Color.black);
@@ -82,7 +82,7 @@ public class NumGuess{
 			answer.setBounds(50,150,350, 70);
 			answer.setBackground(Color.black);
 			
-			enter = new JButton("Enter");
+			enter = new JButton("Ingresar");
 			frame.getContentPane().add(enter);
 			enter.setBounds(160, 120, 150, 25);
 			enter.addActionListener(new ActionListener() {
@@ -95,7 +95,7 @@ public class NumGuess{
 							{
 							guess_count--;
 							guessCount.setText("Guesses Left: "+guess_count);
-							hints.setText("higher!!");
+							hints.setText("mas alto!!");
 							lowest_guess=guess;
 							lowestGuess.setText("Lowest Guess: "+lowest_guess);
 							next.setEnabled(false);
@@ -104,7 +104,7 @@ public class NumGuess{
 							{
 							guess_count--;
 							guessCount.setText("Guesses Left: "+guess_count);
-							hints.setText("lower!!");
+							hints.setText("mas bajito!!");
 							highest_guess=guess;
 							highestGuess.setText("Highest Guess: "+highest_guess);
 							next.setEnabled(false);
@@ -134,7 +134,7 @@ public class NumGuess{
 						}
 					else if((guess_count==0)&&(guess==random)){
 							win_streak++;							
-							hints.setText("you win!!");
+							hints.setText("ganaste!!");
 							winStreak.setText("Win Streak: "+win_streak);
 							if(win_streak>high_score) {
 							high_score=win_streak;
@@ -148,7 +148,7 @@ public class NumGuess{
 		
 				});
 				
-			next=new JButton("Next");
+			next=new JButton("Siguiente");
 			frame.getContentPane().add(next);
 			next.setBounds(10,200,150,25);
 			next.setEnabled(false);
@@ -157,7 +157,7 @@ public class NumGuess{
 					random=rd.nextInt(20);
 					System.out.println(random);
 					text.setText("");
-					hints.setText("Good Luck!");
+					hints.setText("Bunea Suerte!");
 					enter.setEnabled(true);
 					next.setEnabled(false);
 					highest_guess=0;
@@ -166,7 +166,7 @@ public class NumGuess{
 					lowestGuess.setText("Lowest Guess: "+lowest_guess);
 				}
 			});
-			reset=new JButton("Reset");
+			reset=new JButton("Reiniciar");
 			frame.getContentPane().add(reset);
 			reset.setBounds(160,200,150,25);
 			reset.setEnabled(false);
@@ -186,7 +186,7 @@ public class NumGuess{
 					winStreak.setText("Win Streak: "+win_streak);
 					guessCount.setText("Guesses Left: "+guess_count);
 					highScore.setText("High Score: "+high_score);
-					hints.setText("Good Luck!");
+					hints.setText("Buena Suerte!");
 					lowestGuess.setText("Lowest Guess: "+lowest_guess);
 					highestGuess.setText("Highest Guess: "+highest_guess);
 					text.setText("");
@@ -200,14 +200,14 @@ public class NumGuess{
 				}
 			});
 			
-			back=new JButton("Back");
+			back=new JButton("Atrás");
 			frame.getContentPane().add(back);
 			back.setBounds(10,240,150,25);
 			back.setEnabled(true);
 			back.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					frame.setVisible(false);
-					new englishRulesPage();
+					new spanishRulesPage();
 					
 				}
 			});
@@ -215,20 +215,3 @@ public class NumGuess{
 
 }
 }
-
-
-
-//create separate class for the game frame and one for the code 
-//ask for language preference
-//add levels; maybe the number range gets larger so instead of up to 100, it becomes 200 but the "lives" don't grow
-//add a way to get more "lives" MADE IT SO EVERY TIME THEY WIN THEY GET A LIFE --NEW
-	//maybe every time you win 3 in a row, you get one life added.
-//after language preference page, add a page that explains the rules with a begin button that will start the actual game
-//add answer once they lose so they know what it was -- NEW
-//how can i add a image icon to my jframe on mac
-//when they lose and run out of lives make a challenge to help them get 3 lives. maybe rock paper scissors or a math problem 
-
-//add an area to let user know what their highest and lowest guess is -- DONE
-//reset button--DONE
-//win streak -- DONE
-//guess count--DONE
