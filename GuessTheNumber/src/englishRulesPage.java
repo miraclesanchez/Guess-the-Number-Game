@@ -28,11 +28,6 @@ public class englishRulesPage{
 		border.setTitleJustification(TitledBorder.CENTER);
 		border.setTitlePosition(TitledBorder.TOP);
 		
-		rulePanel=new JPanel();
-		rulePanel.setBorder(border);
-		rulePanel.setBounds(50,10,250,160);
-		rulePanel.setLayout(new BorderLayout());
-		
 		rulesFrame=new JFrame(" ? Number Game ?");
 		rulesFrame.getContentPane().setLayout(null);
 		rulesFrame.setSize(350,300);
@@ -40,33 +35,35 @@ public class englishRulesPage{
 		rulesFrame.getContentPane().setBackground(new Color(245,245,220));
 		rulesFrame.setResizable(false);
 		
+		rulePanel=new JPanel();
+		rulePanel.setBorder(border);
+		rulePanel.setBounds(50,10,250,160);
+		rulePanel.setLayout(new BorderLayout());
+		
 		ruleList=new JTextArea(250,160);
-		ruleList.setLocation(50, 10);
 		ruleList.setLineWrap(true);
 		ruleList.setWrapStyleWord(true);
 		ruleList.setEditable(false);
-		//ruleList.setBounds(50,10,220,150);
-		ruleList.setText("Hello! These are the rules for the game sdlfkm onm odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs ndjfn d sdfj sdkfdlfkm onm odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs ndjfn d sdfj sdkfdlfkm on\n"
-				+ "m odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs\n"
-				+ "cvbvbsdbvvbsbsbsdb\n"
-				+ "dfbsvsdb\n"
-				+ "sdbfsbsdbsd\n"
-				+ "bfsdbsd\n"
-				+ "sdfbsdbsdbsd\n"
-				+ "bsfdbsdb\n"
+		ruleList.setText("The computer will generate a number from 0 to 20 and you will have 6 chances to guess right.\n"
+				+"\n"
+				+ "- If you guess right, you will be pormted to hit next and continue playing until you run out of guesses.\n"
+				+ "- If you run out of guesses, there will be a challenge you can complete for more guesses. Or you can choose to reset and start over.\n"
+				+ "-There will also be a challenge button where you can try for more guesses even if you haven't run out.\n"
+				+ "-As you go on, the number range will get larger and the challenges will get harder, but you will not get more guesses.\n"
+				+"\t\t\t\t\t GOOD LUCK!!"
 				+ "");
 		
-		scrPane= new JScrollPane(ruleList,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		scrPane= new JScrollPane(ruleList,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         rulePanel.add(scrPane);
 		
-		begin=new JButton();
 		begin= new JButton("Begin");
 		begin.setBounds(210,180,90,40);
 		rulesFrame.add(begin);
 		begin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
-					rulesFrame.setVisible(false);
-					new NumGuess();
+				rulesFrame.setVisible(false);
+				new NumGuess();
 				}});
 		
 		back=new JButton("Back");
@@ -81,9 +78,9 @@ public class englishRulesPage{
 			}
 		});
 		
+		
 		rulesFrame.getContentPane().add(begin);
 		rulesFrame.getContentPane().add(rulePanel);
-		rulesFrame.setResizable(false);
 		rulesFrame.setVisible(true);
 		rulesFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		

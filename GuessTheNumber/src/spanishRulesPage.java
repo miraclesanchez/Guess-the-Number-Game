@@ -43,20 +43,16 @@ public class spanishRulesPage{
 		ruleList.setLineWrap(true);
 		ruleList.setWrapStyleWord(true);
 		ruleList.setEditable(false);
-		ruleList.setText("Hello! These are the rules for the game sdlfkm onm odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs ndjfn d sdfj sdkfdlfkm onm odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs ndjfn d sdfj sdkfdlfkm on\n"
-				+ "m odjmnf owdm om wopdcm  dokmcasdo sdkfjnvedfjk  dfjs\n"
-				+ "cvbvbsdbvvbsbsbsdb\n"
-				+ "dfbsvsdb\n"
-				+ "sdbfsbsdbsd\n"
-				+ "bfsdbsd\n"
-				+ "sdfbsdbsdbsd\n"
-				+ "bsfdbsdb\n"
+		ruleList.setText("The computer will generate a number from 0 to 20 and you will have 6 chances to guess right.\n"
+				+ "- If you guess right, you will be pormted to hit next and continue playing until you run out of guesses"
+				+ "- If you run out of guesses, there will be a challenge you can complete for more guesses. Or you can choose to reset and start over.\n"
+				+ "-There will also be a challenge button where you can try for more guesses even if you haven't run out."
+				+ "As you go on, the number range will get larger and the challenges will get harder, but you will not get more guesses.\n"
 				+ "");
 		
 		scrPane= new JScrollPane(ruleList,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         rulePanel.add(scrPane);
 		
-        begin=new JButton();
 		begin= new JButton("Comenzar");
 		begin.setBounds(210,180,90,40);
 		rulesFrame.add(begin);
@@ -78,7 +74,6 @@ public class spanishRulesPage{
 		});
 		rulesFrame.getContentPane().add(begin);
 		rulesFrame.getContentPane().add(rulePanel);
-		rulesFrame.setResizable(false);
 		rulesFrame.setVisible(true);
 		rulesFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		

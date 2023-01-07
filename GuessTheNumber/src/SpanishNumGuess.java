@@ -15,7 +15,7 @@ public class SpanishNumGuess{
 	JFrame frame;
 	JLabel instruction, answer, hints, winStreak, highScore, guessCount, highestGuess, lowestGuess, language;
 	JTextField text;
-	JButton next, enter, reset, cOntinue, back;
+	JButton next, enter, reset, back;
 	JPanel reminders;
 	int random;
 	int guess, win_streak, highest_guess, lowest_guess, high_score=0;

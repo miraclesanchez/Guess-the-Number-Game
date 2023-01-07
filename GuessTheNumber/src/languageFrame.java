@@ -28,6 +28,7 @@ public class languageFrame {
 	languageFrame.getContentPane().setBackground(new Color(245,245,220));
 	languageFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	languageFrame.setResizable(false);
+	languageFrame.setVisible(true);
 
 	language= new JLabel("Choose Your Language Preference: ");
 	language.setBackground(Color.black);
@@ -38,7 +39,7 @@ public class languageFrame {
 	english.setBounds(60,90,120,50);
 	languageFrame.add(english);
 	
-	spanish= new JRadioButton("Spanish");
+	spanish= new JRadioButton("Español");
 	spanish.setBounds(60,120,120,50);
 	languageFrame.add(spanish);
 	
@@ -49,12 +50,11 @@ public class languageFrame {
 	cOntinue= new JButton("Continue");
 	cOntinue.setBounds(210,180,90,40);
 	languageFrame.add(cOntinue);
-	languageFrame.setVisible(true);
 	cOntinue.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent evt) {
 			if(english.isSelected()) {
 				languageFrame.setVisible(false);
-				new englishRulesPage();	
+				new englishRulesPage();
 			}
 			else if(spanish.isSelected()) {
 				languageFrame.setVisible(false);

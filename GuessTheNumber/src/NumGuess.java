@@ -13,16 +13,20 @@ import javax.swing.JTextField;
 public class NumGuess{
 	private final static Random rd=new Random();
 	JFrame frame;
-	JLabel instruction, answer, hints, winStreak, highScore, guessCount, highestGuess, lowestGuess, language;
+	JLabel instruction, answer, hints, winStreak, highScore;
+	static JLabel guessCount;
+	JLabel highestGuess;
+	JLabel lowestGuess;
+	JLabel language;
 	JTextField text;
-	JButton next, enter, reset, cOntinue, back;
+	JButton next, enter, reset, back, challenge;
 	JPanel reminders;
 	int random;
-	int guess, win_streak, highest_guess, lowest_guess, high_score=0;
-	int guess_count=5;
-
+	public static int guess, win_streak, highest_guess, lowest_guess, high_score=0;
+	static int guess_count=5;
+	
 	public NumGuess() {
-			random=rd.nextInt(20);
+			random=rd.nextInt(10);
 			System.out.println(random);
 			
 			frame = new JFrame(" ? Number Game ?");
@@ -34,10 +38,10 @@ public class NumGuess{
 			frame.getRootPane().setDefaultButton(enter);
 			frame.setResizable(false);
 			
-			reminders=new JPanel();
-			frame.add(reminders);
-			reminders.setBounds(205,5,120,50);
-			reminders.setBackground(Color.red);
+//			reminders=new JPanel();
+//			frame.add(reminders);
+//			reminders.setBounds(205,5,120,50);
+//			reminders.setBackground(Color.red);
 			
 			instruction=new JLabel("Enter a number from 0 to 20");
 			instruction.setBounds(70, 70, 200, 67);
@@ -67,21 +71,23 @@ public class NumGuess{
 			guessCount.setBounds(205, 30, 200, 67);
 			frame.add(guessCount);
 			guessCount.setBackground(Color.black );
+		
 			
 			highestGuess=new JLabel("Highest Guess: "+highest_guess);
 			highestGuess.setBounds(230, -25, 250, 67);
-			highestGuess.setForeground(Color.white);
-			reminders.add(highestGuess);
+			highestGuess.setForeground(Color.black);
+//			reminders.add(highestGuess);
+			frame.add(highestGuess);
 			
 			lowestGuess=new JLabel("Lowest Guess: "+lowest_guess);
 			lowestGuess.setBounds(230, -10, 250, 67);
-			reminders.add(lowestGuess);
-			lowestGuess.setForeground(Color.white);
+//			reminders.add(lowestGuess);
+			lowestGuess.setForeground(Color.black);
+			frame.add(lowestGuess);
 			
 			answer=new JLabel();
 			answer.setBounds(50,150,350, 70);
 			answer.setBackground(Color.black);
-			
 			enter = new JButton("Enter");
 			frame.getContentPane().add(enter);
 			enter.setBounds(160, 120, 150, 25);
@@ -200,6 +206,16 @@ public class NumGuess{
 				}
 			});
 			
+			challenge= new JButton("Challenge");
+			challenge.setBounds(160,240,150,25);
+			frame.add(challenge);
+			challenge.setVisible(true);
+			challenge.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent evt) {
+						new challengeFrame();
+					}});
+			
+			
 			back=new JButton("Back");
 			frame.getContentPane().add(back);
 			back.setBounds(10,240,150,25);
@@ -207,28 +223,35 @@ public class NumGuess{
 			back.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					frame.setVisible(false);
-					new englishRulesPage();
-					
+					new englishRulesPage();	
 				}
 			});
 			frame.setVisible(true);
-
 }
+	public static void setGuess() {
+		guess_count++;
+		guessCount.setText("Guesses Left: "+guess_count);
+	}
 }
 
 
 
 //create separate class for the game frame and one for the code 
-//ask for language preference
+
 //add levels; maybe the number range gets larger so instead of up to 100, it becomes 200 but the "lives" don't grow
-//add a way to get more "lives" MADE IT SO EVERY TIME THEY WIN THEY GET A LIFE --NEW
-	//maybe every time you win 3 in a row, you get one life added.
-//after language preference page, add a page that explains the rules with a begin button that will start the actual game
-//add answer once they lose so they know what it was -- NEW
+//maybe every time you win 3 in a row, you get one life added.
 //how can i add a image icon to my jframe on mac
 //when they lose and run out of lives make a challenge to help them get 3 lives. maybe rock paper scissors or a math problem 
+
+//LOOK UP INHERITANCE VERSUS EXTENDS 
 
 //add an area to let user know what their highest and lowest guess is -- DONE
 //reset button--DONE
 //win streak -- DONE
 //guess count--DONE
+//ask for language preference DONE
+//add a way to get more "lives" MADE IT SO EVERY TIME THEY WIN THEY GET A LIFE --NEW DONE
+//after language preference page, add a page that explains the rules with a begin button that will start the actual game DONE
+//add answer once they lose so they know what it was -- NEW DONE
+//how can i make this make you think 
+//when they lose and run out of lives make a challenge to help them get 3 lives. maybe rock paper scissors or a math problem DONE
