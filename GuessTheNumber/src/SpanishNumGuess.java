@@ -63,17 +63,17 @@ public class SpanishNumGuess{
 			frame.add(highScore);
 			highScore.setBackground(Color.black);
 			
-			guessCount=new JLabel("Guesses Left: "+guess_count);
+			guessCount=new JLabel("Conjeturas que quedan: "+guess_count);
 			guessCount.setBounds(205, 30, 200, 67);
 			frame.add(guessCount);
 			guessCount.setBackground(Color.black );
 			
-			highestGuess=new JLabel("Highest Guess: "+highest_guess);
+			highestGuess=new JLabel("Suposición más alta: "+highest_guess);
 			highestGuess.setBounds(230, -25, 250, 67);
 			highestGuess.setForeground(Color.white);
 			reminders.add(highestGuess);
 			
-			lowestGuess=new JLabel("Lowest Guess: "+lowest_guess);
+			lowestGuess=new JLabel("Suposición más baja: "+lowest_guess);
 			lowestGuess.setBounds(230, -10, 250, 67);
 			reminders.add(lowestGuess);
 			lowestGuess.setForeground(Color.white);
@@ -94,55 +94,55 @@ public class SpanishNumGuess{
 						if(guess<random)
 							{
 							guess_count--;
-							guessCount.setText("Guesses Left: "+guess_count);
+							guessCount.setText("Conjeturas que quedan: "+guess_count);
 							hints.setText("mas alto!!");
 							lowest_guess=guess;
-							lowestGuess.setText("Lowest Guess: "+lowest_guess);
+							lowestGuess.setText("Suposición más baja: "+lowest_guess);
 							next.setEnabled(false);
 							}
 						else if(guess>random)
 							{
 							guess_count--;
-							guessCount.setText("Guesses Left: "+guess_count);
+							guessCount.setText("Conjeturas que quedan: "+guess_count);
 							hints.setText("mas bajito!!");
 							highest_guess=guess;
-							highestGuess.setText("Highest Guess: "+highest_guess);
+							highestGuess.setText("Suposición más alta: "+highest_guess);
 							next.setEnabled(false);
 							}
 						else if(guess==random)
 							{
 							win_streak++;							
-							hints.setText("you win!!");
-							winStreak.setText("Win Streak: "+win_streak);
+							hints.setText("ganaste!!");
+							winStreak.setText("Racha: "+win_streak);
 							if(win_streak>high_score) {
 							high_score=win_streak;
 							}
 							enter.setEnabled(false);
 							next.setEnabled(true);
 							guess_count++;
-							guessCount.setText("Guesses Left: "+guess_count);
+							guessCount.setText("Conjeturas que quedan: "+guess_count);
 							}
 					}
 					else if((guess_count==0)&&(guess!=random)) {
 							enter.setEnabled(false);
 							hints.setBounds(30,150,350,25);
-							hints.setText("Out of Guesses! Press reset to try again!");
+							hints.setText("Fuera de conjeturas! ¡Presiona reset para intentarlo de nuevo!");
 							frame.getContentPane().add(answer);
-							answer.setText("The correct answer was: "+random);
+							answer.setText("La respuesta correcta fue: "+random);
 							next.setEnabled(false);
 							reset.setEnabled(true);
 						}
 					else if((guess_count==0)&&(guess==random)){
 							win_streak++;							
 							hints.setText("ganaste!!");
-							winStreak.setText("Win Streak: "+win_streak);
+							winStreak.setText("Racha: "+win_streak);
 							if(win_streak>high_score) {
 							high_score=win_streak;
 						}
 							enter.setEnabled(false);
 							next.setEnabled(true);
 							guess_count++;
-							guessCount.setText("Guesses Left: "+guess_count);
+							guessCount.setText("Conjeturas que quedan: "+guess_count);
 							}
 				}
 		
@@ -162,8 +162,8 @@ public class SpanishNumGuess{
 					next.setEnabled(false);
 					highest_guess=0;
 					lowest_guess=0;
-					highestGuess.setText("Highest Guess: "+highest_guess);
-					lowestGuess.setText("Lowest Guess: "+lowest_guess);
+					highestGuess.setText("Suposición más alta: : "+highest_guess);
+					lowestGuess.setText("Suposición más baja: "+lowest_guess);
 				}
 			});
 			reset=new JButton("Reiniciar");
@@ -183,12 +183,12 @@ public class SpanishNumGuess{
 					
 					hints.setBounds(120,160,150,25);
 				
-					winStreak.setText("Win Streak: "+win_streak);
-					guessCount.setText("Guesses Left: "+guess_count);
-					highScore.setText("High Score: "+high_score);
+					winStreak.setText("Racha: "+win_streak);
+					guessCount.setText("Adivinanzas Restantes: "+guess_count);
+					highScore.setText("Puntuación más alta: "+high_score);
 					hints.setText("Buena Suerte!");
-					lowestGuess.setText("Lowest Guess: "+lowest_guess);
-					highestGuess.setText("Highest Guess: "+highest_guess);
+					lowestGuess.setText("Suposición más baja:  "+lowest_guess);
+					highestGuess.setText("Suposición más alta: "+highest_guess);
 					text.setText("");
 					
 					System.out.println(random);

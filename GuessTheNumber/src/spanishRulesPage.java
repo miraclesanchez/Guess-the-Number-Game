@@ -43,11 +43,13 @@ public class spanishRulesPage{
 		ruleList.setLineWrap(true);
 		ruleList.setWrapStyleWord(true);
 		ruleList.setEditable(false);
-		ruleList.setText("The computer will generate a number from 0 to 20 and you will have 6 chances to guess right.\n"
-				+ "- If you guess right, you will be pormted to hit next and continue playing until you run out of guesses"
-				+ "- If you run out of guesses, there will be a challenge you can complete for more guesses. Or you can choose to reset and start over.\n"
-				+ "-There will also be a challenge button where you can try for more guesses even if you haven't run out."
-				+ "As you go on, the number range will get larger and the challenges will get harder, but you will not get more guesses.\n"
+		ruleList.setText("La computadora generará un número del 0 al 20 y tendrás 6 oportunidades de acertar.\n"
+				+"\n"
+				+ "- Si aciertas, se te indicará que presiones siguiente y continúes jugando hasta que te quedes sin conjeturas.\n"
+				+ "- Si te quedas sin conjeturas, habrá un desafío que puedes completar para obtener más conjeturas. O puedes optar por reiniciar y empezar de nuevo.\n"
+				+ "-También habrá un botón de desafío en el que puedes intentar adivinar más, incluso si no te has quedado sin.\n"
+				+ "-A medida que avanza, el rango de números se hará más grande y los desafíos más difíciles, pero no obtendrá más conjeturas.\n"
+				+"\t\t\t\t\t ¡¡BUENA SUERTE!!"
 				+ "");
 		
 		scrPane= new JScrollPane(ruleList,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -61,7 +63,7 @@ public class spanishRulesPage{
 					rulesFrame.setVisible(false);
 					new NumGuess();
 				}});
-		back=new JButton("Back");
+		back=new JButton("Atrás");
 		rulesFrame.getContentPane().add(back);
 		back.setBounds(10,240,150,25);
 		back.setEnabled(true);
